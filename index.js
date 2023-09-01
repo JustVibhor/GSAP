@@ -37,11 +37,21 @@ timeline
     ease: "bounce.out",
     y: +329,
   })
-  .from(".link", { duration: 0.5, opacity: 0, stagger: 0.5 })
+  .from(".link", { duration: 0.5, opacity: 0 })
   .to(".right", { duration: 0.2, x: "-33vw", ease: "power3.in" })
   .to(".left", { duration: 0.2, x: "33vw", ease: "power3.in" })
   .to(".right", { duration: 0.2, x: "", ease: "power3.in" })
-  .to(".left", { duration: 0.2, x: "", ease: "power3.in" });
+  .to(".left", { duration: 0.2, x: "", ease: "power3.in" })
+  .to(".button", {
+    duration: 0.4,
+    ease: "rough({ strength: 1, points: 20, template: none.out, taper: none, randomize: true, clamp: false })",
+    y: "-10vh",
+  })
+  .to(".button", {
+    duration: 0.5,
+    ease: "rough({ strength: 1, points: 20, template: none.out, taper: none, randomize: true, clamp: false })",
+    y: "0",
+  });
 
 // Success TAG
 document.getElementById("button").addEventListener("click", function () {
